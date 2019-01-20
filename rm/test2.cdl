@@ -1,0 +1,67 @@
+
+
+# This is a comment
+
+Cell employee {
+    Component employee {
+        Image:Docker = "docker.io/wso2vick/sampleapp-employee"
+        Ports {
+            TCP 80->8080
+            TCP 443->8081
+        }
+    }
+
+    Component salary {
+        Image:Docker = "docker.io/wso2vick/sampleapp-salary"
+        Ports {
+             TCP 80->8080
+        }
+    }
+
+    Ingress:HTTP {
+        "/employee" -> employee {
+            GET "/"
+            POST "/"
+        }
+    }
+}
+
+
+
+Cell stock-options {
+    Component stock {
+        Image:Docker = "docker.io/wso2vick/sampleapp-stock"
+        Ports {
+             TCP 80->8080
+        }
+    }
+
+    Ingress:HTTP {
+        "/stock" -> stock {
+            GET "/"
+        }
+    }
+}
+
+
+
+Cell hr {
+    Component hr {
+        Image:Docker = "docker.io/wso2vick/sampleapp-hr"
+        Ports {
+             TCP 80->8080
+        }
+        Env {
+            "employeegw_url":Cell = employee
+            "stockgw_url":Cell = stock-options
+        }
+    }
+
+    Ingress:HTTP {
+        "/info" -> hr {
+            GET "/"
+        }
+    }
+}
+
+

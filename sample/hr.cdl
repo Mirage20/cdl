@@ -1,0 +1,21 @@
+
+
+Cell hr {
+    Component hr {
+        Image:Docker = "docker.io/wso2vick/sampleapp-hr"
+        Ports {
+             TCP 80->8080
+        }
+        Env {
+            "employeegw_url":Cell = employee
+            "stockgw_url":Cell = stock-options
+        }
+    }
+
+    Ingress:HTTP {
+        "/info" -> hr {
+            GET "/"
+        }
+    }
+}
+

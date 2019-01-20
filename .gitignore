@@ -1,0 +1,10 @@
+# Idea files
+.idea/
+*.iml
+
+.vscode/
+
+_build/
+bin/
+coverage.html
+coverage.out

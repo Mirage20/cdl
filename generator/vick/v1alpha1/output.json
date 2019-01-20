@@ -1,0 +1,71 @@
+{
+  "kind": "Cell",
+  "apiVersion": "vick.wso2.com/v1alpha1",
+  "metadata": {
+    "name": "employee"
+  },
+  "spec": {
+    "gatewayTemplate": {
+      "metadata": {},
+      "spec": {
+        "apis": [
+          {
+            "context": "employee",
+            "definitions": [
+              {
+                "path": "/",
+                "method": "GET"
+              }
+            ],
+            "backend": "employee",
+            "global": false
+          }
+        ]
+      }
+    },
+    "servicesTemplates": [
+      {
+        "metadata": {
+          "name": "employee"
+        },
+        "spec": {
+          "replicas": 1,
+          "servicePort": 80,
+          "serviceAccountName": "",
+          "container": {
+            "name": "",
+            "image": "docker.io/wso2vick/sampleapp-employee"
+          }
+        }
+      },
+      {
+        "metadata": {
+          "name": "salary"
+        },
+        "spec": {
+          "replicas": 1,
+          "servicePort": 80,
+          "serviceAccountName": "",
+          "container": {
+            "name": "",
+            "image": "docker.io/wso2vick/sampleapp-salary"
+          }
+        }
+      },
+      {
+        "metadata": {
+          "name": "debug"
+        },
+        "spec": {
+          "replicas": 1,
+          "servicePort": 80,
+          "serviceAccountName": "",
+          "container": {
+            "name": "",
+            "image": "docker.io/mirage20/k8s-debug-tools"
+          }
+        }
+      }
+    ]
+  }
+}

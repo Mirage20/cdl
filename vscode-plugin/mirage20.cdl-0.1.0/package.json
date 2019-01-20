@@ -1,0 +1,25 @@
+{
+    "name": "CDL",
+    "version": "0.1.0",
+    "publisher": "mirage20",
+    "description": "Cell Definion Language support for Visual Studio Code",
+    "engines": {
+        "vscode": "^1.22.0"
+    },
+    "contributes": {
+        "languages": [{
+            "id": "cdl",
+            "extensions": [
+                ".cdl"
+            ],
+            "aliases": [
+                "CDL"
+            ]
+        }],
+        "grammars": [{
+            "language": "cdl",
+            "scopeName": "source.cdl",
+            "path": "./syntaxes/cdl.tmLanguage.json"
+        }]
+    }
+}

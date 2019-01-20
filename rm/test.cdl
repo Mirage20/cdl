@@ -1,0 +1,21 @@
+
+
+
+Cell employee {
+    Component employee {
+        image Docker = "docker/employee"
+        
+    }
+
+    Component salary {
+        image Docker = "docker/employee"
+    }
+
+    Ingress:HTTP {
+        employee {
+            "/employee" {
+                GET,POST "/"
+            }
+        }
+    }
+}

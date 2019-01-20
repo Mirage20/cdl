@@ -1,0 +1,83 @@
+{
+	"scopeName" : "source.cdl",
+	"patterns" : [
+		{
+			"name":  "keyword.control.cdl",
+			"match" :"\\b(KC)\\b"
+		},
+		{
+			"name":  "keyword.operator.cdl",
+			"match" :"\\b(KO)\\b"
+		},
+		{
+			"name":  "keyword.other.cdl",
+			"match" :"\\b(Component|Cell|Ingress|return)\\b"
+		},
+		{
+			"name":  "entity.name.type.cdl",
+			"match" :"\\b(HTTP|Docker|TCP|UDP)\\b"
+		},
+		{
+			"name":  "entity.name.function.cdl",
+			"match" :"\\b(ENF)\\b"
+		},
+		{
+			"name":  "entity.name.tag.cdl",
+			"match" :"\\b(ENT)\\b"
+		},
+		{
+			"name":  "entity.name.section.cdl",
+			"match" :"\\b(ENS)\\b"
+		},
+		{
+			"name":  "string.quoted.double.cdl",
+			"begin" : "\"",
+			"end" :"\""
+		},
+		{
+			"name":  "comment.line.number-sign.cdl",
+			"begin" : "#",
+			"end" :"\n"
+		},
+		{
+			"name":  "constant.language.cdl",
+			"match" :"\\b(CLC)\\b"
+		},
+		{
+			"name":  "constant.numeric.cdl",
+			"match" :"\\b(CN|GET|POST|([0-9]+))\\b"
+		},
+		{
+			"name":  "storage.type.cdl",
+			"match" :"\\b(ST)\\b"
+		},
+		{
+			"name":  "storage.modifier.cdl",
+			"match" :"\\b(SM)\\b"
+		},
+		{
+			"name":  "support.function.cdl",
+			"match" :"\\b(SUPF)\\b"
+		},
+		{
+			"name":  "support.class.cdl",
+			"match" :"\\b(SUPC)\\b"
+		},
+		{
+			"name":  "support.type.cdl",
+			"match" :"\\b(SUPT)\\b"
+		},
+		{
+			"name":  "support.constant.cdl",
+			"match" :"\\b(SUPCON)\\b"
+		},
+		{
+			"name":  "support.variable.cdl",
+			"match" :"\\b(SUPV|Image|Ports|Env)\\b"
+		},
+		{
+			"name":  "support.other.cdl",
+			"match" :"\\b(SUPO)\\b"
+		}
+	]
+}
