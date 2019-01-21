@@ -33,6 +33,10 @@ Or to save as a readable format
 
     cdl hr.cdl employee.cdl stock-options.cdl --runtime=kubernetes -o yaml
     
+Run following command to delete the deployed cells
+
+    cdl hr.cdl employee.cdl stock-options.cdl --runtime=kubernetes | kubectl delete -f -
+    
 ### CDL Syntax from a Sample
 
 ```
